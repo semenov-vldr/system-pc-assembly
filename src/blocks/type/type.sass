@@ -1,0 +1,82 @@
+.type
+  background-color: #151515
+  padding: 24px 0 160px
+  @media (max-width: $width-tablet)
+    padding-bottom: 64px
+
+  &__title
+    @include fontSize(24, 48)
+    text-align: center
+
+  &__body
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    margin-top: 32px
+    gap: 32px
+    //@media (max-width: $width-mobile)
+    @media (max-width: $width-tablet)
+      grid-template-columns: 1fr
+
+  &__img
+    aspect-ratio: 1 / 1
+    @media (max-width: $width-tablet)
+      max-width: 480px
+      margin: 0 auto
+    img
+      display: block
+      object-fit: cover
+      width: 100%
+      height: 100%
+
+  &-desc
+    @media (max-width: $width-tablet)
+      order: 1
+    &__title
+      font-size: 20px
+      margin-bottom: 16px
+    &__text
+      line-height: 1.5
+      @include fontSize(14, 16)
+      & + &
+        margin-top: 8px
+
+  &-properties
+    @media (max-width: $width-tablet)
+      order: 1
+    &__title
+      @include fontSize(20, 24)
+      margin-bottom: 20px
+
+    &__list
+      display: flex
+      flex-direction: column
+      gap: 16px
+    &__name
+      color: rgba($white, 0.6)
+
+    &__item
+      border-bottom: 1px solid rgba($white, 0.6)
+      //border-bottom: 1px solid $white
+      padding-bottom: 8px
+      display: flex
+      align-items: center
+      justify-content: space-between
+      gap: 32px
+      @include fontSize(14, 18)
+      @media (max-width: $width-tablet)
+        gap: 16px
+      @media (max-width: $width-mobile)
+        gap: 8px
+
+  &__actions
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 16px
+
+  &__price
+    @include fontSize(28, 40)
+    font-weight: 600
+  &__button
+    @media (max-width: $width-mobile)
+      width: 100%

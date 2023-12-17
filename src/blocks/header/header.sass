@@ -1,0 +1,110 @@
+.header
+  position: sticky
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 5
+  padding: 14px 0
+  min-height: 35px
+  background-color: $bg
+  transition: 0.4s ease
+  &.js-menu-open
+    z-index: 6
+  @media (max-width: $width-tablet)
+    min-height: 50px
+    padding: 12px 0
+    font-size: 20px
+
+  &__container
+    display: flex
+    align-items: center
+    gap: 52px
+    @media (max-width: $width-mobile)
+      gap: 16px
+
+  &__logo
+    width: 50px
+    @media (max-width: $width-tablet)
+      width: 40px
+
+  &__nav
+    @media (max-width: $width-tablet)
+      overflow: initial
+      position: fixed
+      top: 0
+      left: 0
+      max-height: 100vh
+      min-height: 500px
+      height: 100%
+      width: 100%
+      background-color: $bg
+      padding: 56px 0
+      transform: translateX(100%)
+      transition: $transition
+      z-index: 1
+      font-weight: 500
+      &.js-menu-open
+        transform: translateX(0)
+      &.js-menu-open .header__nav-close
+        display: block
+
+  &__nav-list
+    position: relative
+    display: flex
+    align-items: center
+    gap: 32px
+    z-index: 1
+    @media (max-width: $width-tablet)
+      gap: 0
+      flex-direction: column
+      align-items: flex-start
+
+  &__nav-item
+    white-space: nowrap
+    &--desktop-hidden
+      display: none
+      @media (max-width: $width-tablet)
+        display: block
+    @media (max-width: $width-tablet)
+      border-bottom: 1px solid $grey
+      width: 100%
+      padding: 12px 0
+      &:first-child
+        border-top: 1px solid $grey
+
+  &__nav-link
+    transition: $transition
+    &:hover
+      color: $accent
+    @media (max-width: $width-tablet)
+      padding: 0 50px
+    @media (max-width: $width-mobile)
+      padding: 0 16px
+
+  &__tel
+    margin-left: auto
+    white-space: nowrap
+    font-weight: 700
+    transition: $transition
+    @media (max-width: $width-tablet)
+      font-size: 16px
+    &:hover
+      text-decoration: underline
+
+  &__burger
+    display: none
+    @media (max-width: $width-tablet)
+      display: block
+      width: 24px
+
+  &__nav-close
+    display: none
+    position: absolute
+    right: 50px
+    top: 22px
+    z-index: 1
+    @media (max-width: $width-mobile)
+      right: 16px
+      width: 24px
+    img
+      transform: rotate(180deg)

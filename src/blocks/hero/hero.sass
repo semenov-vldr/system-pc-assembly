@@ -1,0 +1,29 @@
+.hero
+  position: relative
+  min-height: calc(100vh - 86px)
+  height: 100%
+  padding: 64px 0
+  //background-color: lightgrey
+  color: $white
+  @media (max-width: $width-tablet)
+    min-height: calc(100vh - 56px)
+    padding: 48px 0
+
+  &__container
+    position: relative
+    z-index: 1
+
+  &__title
+    //font-family: "RussoOne", sans-serif
+    @include fontSize(40, 64)
+    margin-bottom: 24px
+  &__text
+    font-family: "AverageSans", sans-serif
+    margin-bottom: 48px
+    @include fontSize(16, 20)
+    @media (max-width: $width-mobile)
+      margin-bottom: 200px
+
+  &__button
+    @media (max-width: $width-mobile)
+      width: 100%
