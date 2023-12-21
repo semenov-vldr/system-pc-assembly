@@ -296,3 +296,45 @@ if (popup) {
   ;
 }
 "use strict";
+
+var selection = document.querySelector(".selection");
+if (selection) {
+  var tabs = selection.querySelectorAll("[data-tab]");
+  var types = selection.querySelectorAll("[data-type]");
+  types.forEach(function (type) {
+    return type.classList.add('js-hidden');
+  });
+  types[0].classList.remove('js-hidden');
+  tabs[0].classList.add('js-tab-active');
+  tabs.forEach(function (tab) {
+    var dataTab = tab.dataset.tab;
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (tab) {
+        return tab.classList.remove('js-tab-active');
+      });
+      types.forEach(function (type) {
+        var dataType = type.dataset.type;
+        if (dataTab === dataType) {
+          tab.classList.add('js-tab-active');
+          type.classList.remove('js-hidden');
+        } else {
+          type.classList.add('js-hidden');
+        }
+      });
+    });
+  });
+}
+"use strict";
+
+var typeBlocks = document.querySelectorAll(".type");
+if (typeBlocks) {
+  typeBlocks.forEach(function (typeBlock) {
+    var moreBtn = typeBlock.querySelector(".type-desc__btn-more");
+    var typeDescTextList = typeBlock.querySelectorAll("li.type-desc__text");
+    moreBtn.addEventListener("click", function () {
+      typeDescTextList.forEach(function (text) {
+        text.classList.add("js-visible");
+      });
+    });
+  });
+}
