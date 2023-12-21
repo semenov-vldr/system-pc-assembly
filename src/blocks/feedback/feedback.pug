@@ -1,14 +1,14 @@
 section.feedback.scroll-margin#feedback
     .feedback__container
-        h2.title-section.feedback__title.h-line Задать вопрос
+        h2.title-section.feedback__title Задать вопрос
 
         form.feedback__form
             label Имя
                 input(placeholder="Введите имя" name="name" autocomplete="off" pattern="^[A-Za-zА-Яа-яЁё\\s]+$" maxlength='25' required)
-            label Номер телефона
+            label Телефон
                 input(placeholder="+7 (999) 999-99-99" name="phone" data-tel-input required autocomplete="off" maxlength="20")
 
-            button.button.button--outline(type="submit") Отправить заявку
+            button.button.button--accent(type="submit") Заказать звонок
 
     .feedback__message.feedback-message
         .feedback-message__body-success.body-success

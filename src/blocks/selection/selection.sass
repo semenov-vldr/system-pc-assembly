@@ -1,0 +1,72 @@
+.selection
+  overflow: hidden
+
+  &__tabs-large
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 36px
+    @media (max-width: $width-tablet)
+      gap: 24px
+    @media (max-width: $width-mobile)
+      gap: 12px
+      overflow: scroll
+    @media (max-width: 500px)
+      gap: 10px
+      margin-right: -16px
+    li
+      min-width: 150px
+      min-height: 150px
+      display: flex
+      align-items: flex-end
+      aspect-ratio: 1 / 1
+      @include fontSize(14, 32)
+      font-weight: 600
+      background-color: $white
+      color: $black
+      padding: 24px
+      border-radius: 32px
+      border-top: 6px solid #C5C5C5
+      border-right: 6px solid #C5C5C5
+      transition: $transition
+      cursor: pointer
+      @media (max-width: $width-tablet)
+        border-radius: 24px
+      @media (max-width: $width-mobile)
+        padding: 14px
+        border-radius: 16px
+        border-width: 4px
+      &:hover,
+      &.js-tab-active
+        background-color: $grey
+        color: $white
+
+  &__tabs-small
+    display: grid
+    gap: 36px
+    grid-template-columns: repeat(3, minmax(100px, 270px))
+    justify-content: center
+    margin-top: 40px
+    margin-bottom: 56px
+    @media (max-width: $width-tablet)
+      gap: 24px
+    @media (max-width: $width-mobile)
+      gap: 16px
+      margin-top: 24px
+      margin-bottom: 32px
+    li
+      @extend .flex-center
+      background-color: $white
+      padding: 24px
+      border-radius: 28px
+      color: $black
+      aspect-ratio: 3 / 1
+      font-weight: 600
+      @include fontSize(14, 32)
+      border-top: 4px solid #C5C5C5
+      border-right: 4px solid #C5C5C5
+      @media (max-width: $width-tablet)
+        padding: 16px
+      @media (max-width: $width-mobile)
+        border-width: 3px
+        padding: 12px
+        border-radius: 12px

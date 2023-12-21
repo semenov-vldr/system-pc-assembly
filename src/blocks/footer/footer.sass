@@ -51,6 +51,9 @@
       gap: 2px
     &__address
       max-width: 205px
+      margin-top: auto
+      @media (max-width: $width-mobile)
+        margin-top: 12px
     &__item--mail svg
       @media (max-width: $width-mobile)
         width: 20px
@@ -68,6 +71,7 @@
     grid-area: author
     display: flex
     flex-direction: column
+    justify-content: flex-end
     gap: 4px
     font-size: 12px
     color: #E5E5E5
@@ -99,7 +103,7 @@
       height: 100%
 
   &__copyright
-    margin-top: 12px
+    margin-top: 32px
     grid-area: copyright
     font-size: 12px
     display: flex
@@ -107,6 +111,7 @@
     @media (max-width: $width-mobile)
       flex-direction: column
       gap: 8px
+      margin-top: initial
   &__politics
     position: relative
     display: flex

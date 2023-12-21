@@ -1,12 +1,11 @@
 .hero
   position: relative
-  min-height: calc(100vh - 86px)
+  min-height: calc(90vh - 86px)
   height: 100%
   padding: 64px 0
-  //background-color: lightgrey
   color: $white
   @media (max-width: $width-tablet)
-    min-height: calc(100vh - 56px)
+    min-height: calc(90vh - 56px)
     padding: 48px 0
 
   &__container
@@ -14,15 +13,18 @@
     z-index: 1
 
   &__title
-    //font-family: "RussoOne", sans-serif
-    @include fontSize(40, 64)
-    margin-bottom: 24px
+    @include fontSize(24, 48)
+    margin-bottom: 20px
   &__text
     font-family: "AverageSans", sans-serif
-    margin-bottom: 48px
-    @include fontSize(16, 20)
+    margin-bottom: 64px
+    @include fontSize(14, 18)
+    max-width: 60%
+    @media (max-width: $width-tablet)
+      max-width: 80%
     @media (max-width: $width-mobile)
       margin-bottom: 200px
+      max-width: initial
 
   &__button
     @media (max-width: $width-mobile)
