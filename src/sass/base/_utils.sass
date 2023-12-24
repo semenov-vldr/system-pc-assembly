@@ -40,18 +40,22 @@
   width: fit-content
   font-size: 20px
   border-radius: 22px
+  border-top: 4px solid transparent
+  border-right: 4px solid transparent
   @media (max-width: $width-mobile)
     padding: 8px 24px
     min-height: 48px
   &.button--accent
     background-color: $accent
+    border-color: $additional-red
     &:hover
-      background-color: $bright-red
+      background-color: $dark-red
+      border-color: #6B1E1E
   &.button--outline
     border: 1px solid $accent
     &:hover
-      background-color: $bright-red
-      border-color: $bright-red
+      background-color: $dark-red
+      border-color: $dark-red
 
 
 .scroll-margin
@@ -70,28 +74,3 @@
 .tablet-hidden
   @media (min-width: $width-tablet)
     display: none
-
-
-// -------- Swiper -----------
-
-// стрелки навигации
-.slider-nav__next,
-.slider-nav__prev
-  position: absolute
-  width: 24px
-  height: 24px
-  cursor: pointer
-  z-index: 1
-  background-repeat: no-repeat
-  background-size: cover
-  background-position: center
-  top: 50%
-  @media (max-width: $width-mobile)
-    display: none
-.slider-nav__prev
-  background-image: url('../img/icons/arrow-next.svg')
-  transform: rotate(180deg)
-  left: 18px
-.slider-nav__next
-  background-image: url('../img/icons/arrow-next.svg')
-  right: 18px

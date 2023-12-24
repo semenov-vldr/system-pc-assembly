@@ -1,5 +1,26 @@
 .selection
-  overflow: hidden
+  position: relative
+  padding: 120px 0 0
+  @media (max-width: $width-mobile)
+    padding: 80px 0 0
+  @media (min-width: $width-mobile)
+    &::after
+      content: ""
+      position: absolute
+      background-image: url("../img/bckgnd-types.svg")
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+      width: 100%
+      height: 100%
+      left: 0
+      top: 300px
+
+
+
+  &__container
+    position: relative
+    z-index: 2
 
   &__tabs-large
     display: grid
@@ -37,8 +58,8 @@
         border-width: 4px
       &:hover,
       &.js-tab-active
-        background-color: $grey
-        color: $white
+        background-color: $blue
+        border-color: #5C78AD
 
   &__tabs-small
     display: grid
@@ -53,6 +74,9 @@
       gap: 16px
       margin-top: 24px
       margin-bottom: 32px
+    @media (max-width: 400px)
+      gap: 8px
+
     li
       @extend .flex-center
       background-color: $white
@@ -61,6 +85,8 @@
       color: $black
       aspect-ratio: 3 / 1
       font-weight: 600
+      cursor: pointer
+      transition: $transition
       @include fontSize(14, 32)
       border-top: 4px solid #C5C5C5
       border-right: 4px solid #C5C5C5
@@ -70,3 +96,9 @@
         border-width: 3px
         padding: 12px
         border-radius: 12px
+      @media (max-width: 360px)
+        padding: 8px
+      &:hover,
+      &.js-tab-active
+        background-color: $blue
+        border-color: #5C78AD
