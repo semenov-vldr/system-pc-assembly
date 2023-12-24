@@ -301,6 +301,16 @@ var selection = document.querySelector(".selection");
 if (selection) {
   var tabs = selection.querySelectorAll("[data-tab]");
   var types = selection.querySelectorAll("[data-type]");
+  var largeTabs = selection.querySelectorAll(".selection__tabs-large li");
+  largeTabs[0].classList.add('js-tab-active');
+  largeTabs.forEach(function (largeTab) {
+    largeTab.addEventListener("click", function () {
+      largeTabs.forEach(function (tab) {
+        return tab.classList.remove('js-tab-active');
+      });
+      largeTab.classList.add('js-tab-active');
+    });
+  });
   types.forEach(function (type) {
     return type.classList.add('js-hidden');
   });
