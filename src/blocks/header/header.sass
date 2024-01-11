@@ -15,13 +15,17 @@
     display: flex
     align-items: center
     gap: 52px
+    @media (max-width: $width-tablet)
+      gap: 32px
     @media (max-width: $width-mobile)
       gap: 16px
 
   &__logo
     width: 50px
+    min-width: 50px
     @media (max-width: $width-tablet)
       width: 40px
+      min-width: 40px
 
   &__nav
     @media (max-width: $width-mobile)
@@ -40,10 +44,21 @@
     &:hover
       color: $accent
 
-  &__tel
-    margin-left: auto
+  &__contacts
+    display: flex
+    align-items: center
     white-space: nowrap
-    @media (max-width: $width-tablet)
-      font-size: 16px
+    transition: $transition
+    &--email
+      margin-left: auto
     &:hover
       text-decoration: underline
+    svg
+      display: none
+    @media (max-width: $width-tablet)
+      font-size: 14px
+      svg
+        display: block
+        width: 24px
+      span
+        display: none

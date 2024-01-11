@@ -50,10 +50,14 @@ function sendMsgTelegram (evt) {
   evt.preventDefault();
   const form = evt.target;
 
-  let message = `<b>Заявка с сайта ООО Система - Радиационное оборудование</b>\n`;
+  let message = `<b>Заявка с сайта ООО Система | Сборка ПК</b>\n`;
 
   message += `<b>Имя отправителя:</b> ${ form.name.value }\n`;
   message += `<b>Телефон:</b> ${ form.phone.value }\n`;
+  if (form.email.value) {
+    message += `<b>Телефон:</b> ${ form.email.value }\n`;
+  }
+
 
   axios.post(URL_API, {
     chat_id: CHAT_ID,
